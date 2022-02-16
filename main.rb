@@ -1,2 +1,3 @@
 require_relative './lib/intermedian'
-require_relative '.lib/read_json'
+
+Intermedian.new.data_parsed
