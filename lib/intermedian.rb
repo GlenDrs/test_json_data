@@ -18,4 +18,23 @@ class Intermedian
 
     final_heads = first_titles  + [fb_id, fb_picture, twitter_id, twitter_photo] - ["profiles"]
   end
+
+  def nested_hash_2_arr
+    array_values = data_parsed.map do |array_hash|
+      [
+      array_hash.values,
+      array_hash.values[3]["facebook"]["id"],
+      array_hash.values[3]["facebook"]["picture"],
+      array_hash.values[3]["twitter"]["id"],
+      array_hash.values[3]["twitter"]["picture"],
+      ]
+    end
+
+    array_values.each {|result0| result0[0].slice!(3)}
+  end
+
+  def with_header
+    creating_heads + nested_hash_2_arr
+  end
+
 end
