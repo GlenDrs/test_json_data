@@ -1,5 +1,8 @@
 require_relative './lib/intermedian'
+require_relative './lib/write_csv'
 
-Intermedian.new.data_parsed
-Intermedian.new.creating_heads
-Intermedian.new.nested_hash_2_arr
+def call
+  WriteCsv.new.array_2_csv
+end
+
+call
