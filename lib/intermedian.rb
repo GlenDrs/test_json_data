@@ -22,7 +22,9 @@ class Intermedian
   def nested_hash_2_arr
     array_values = data_parsed.map do |array_hash|
       [
-      array_hash.values,
+      array_hash.values[0],
+      array_hash.values[1],
+      array_hash.values[2],
       array_hash.values[3]["facebook"]["id"],
       array_hash.values[3]["facebook"]["picture"],
       array_hash.values[3]["twitter"]["id"],
@@ -30,11 +32,7 @@ class Intermedian
       ]
     end
 
-    array_values.each {|result0| result0[0].slice!(3)}
-  end
-
-  def with_header
-    creating_heads + nested_hash_2_arr
+    #array_values.each {|result0| result0[0].slice!(3)}
   end
 
 end
