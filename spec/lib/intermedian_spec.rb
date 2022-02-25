@@ -1,14 +1,14 @@
 require_relative '../../lib/intermedian'
 
 RSpec.describe Intermedian do
-  let (:heads) { described_class.new.creating_heads }
-  id do
-    expect(heads).to eq [id,email,tags,profiles.facebook.id,profiles.facebook.picture,profiles.twitter.id,profiles.twitter.picture]
+  let(:heads) { described_class.new.creating_heads }
+  it do
+    expect(heads).to eq ["id", "email", "tags", "profiles.facebook.id", "profiles.facebook.picture", "profiles.twitter.id", "profiles.twitter.picture"]
   end
 
   context "creating array"
-  id do
-    let (:return_array) { described_class.new.nested_hash_2_arr }
+  let(:return_array) { described_class.new.nested_hash_2_arr }
+  it do
     expect(return_array).to include
     (
     [0,
