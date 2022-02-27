@@ -2,6 +2,17 @@ require_relative '../../lib/read_json'
 
 RSpec.describe JsonFile do
   let(:json_file) { described_class.new.parse_json }
+  
+  it "#data_parsed" do
+    expect(json_file).to be_a Array
+  end
+
+  context "test Hash inside"
+  it do
+    expect(json_file.sample).to be_a Hash
+  end
+
+  context "reading inside"
   it do
     expect(json_file).to include
     (
