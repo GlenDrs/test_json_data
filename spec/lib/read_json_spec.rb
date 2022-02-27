@@ -7,6 +7,11 @@ RSpec.describe JsonFile do
     expect(json_file).to be_a Array
   end
 
+  context "test Hash inside"
+  it do
+    expect(json_file.sample).to be_a Hash
+  end
+
   context "reading inside"
   it do
     expect(json_file).to include
