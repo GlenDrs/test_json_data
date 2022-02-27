@@ -1,6 +1,8 @@
 require_relative '../../lib/intermedian'
 
 RSpec.describe Intermedian do
+  subject(:json_file) { described_class.new}
+
   let(:heads) { described_class.new.creating_heads }
   it do
     expect(heads).to eq ["id", "email", "tags", "profiles.facebook.id", "profiles.facebook.picture", "profiles.twitter.id", "profiles.twitter.picture"]
